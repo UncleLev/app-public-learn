@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  font-size: 10rem;
+  height: 100%;
+}
+.container {
+  padding: 80rem 10rem;
+  width: 75%;
+  max-width: 800px;
+}
+
+.scrollBtn {
+  position: absolute;
+  box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.1);
+
+  & > svg {
+    font-size: 25rem;
+  }
+
+  &--back {
+    left: 10rem;
+    transform: translateY(-50%);
+    top: 50%;
+  }
+
+  &--forward {
+    right: 10rem;
+    transform: translateY(-50%);
+    top: 50%;
+  }
+}
+
+.pagination {
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  &__root {
+    margin-top: 20rem;
+    margin-inline: auto;
+    & button,
+    svg,
+    div {
+      font-size: 14rem;
+    }
+  }
+}

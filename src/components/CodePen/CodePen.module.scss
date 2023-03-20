@@ -1,0 +1,7 @@
+.codePen {
+    font-size: 20rem;
+    & > iframe {
+        width: 100%;
+        height: 500rem;
+    }
+}

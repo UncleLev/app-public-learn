@@ -1,0 +1,32 @@
+.header {
+    padding: 20rem 40rem;
+    background-color: #357bb7;
+
+    &__links {
+        display: flex;
+        gap: 30rem;
+        & > a {
+            text-decoration: underline;
+        }
+    }
+
+    &__container {
+        display: flex;
+        font-size: 15rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 20rem;
+    }
+}
+
+.vision {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    & svg, button {
+        font-size: 25rem;
+    } 
+}

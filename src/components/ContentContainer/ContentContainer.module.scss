@@ -1,0 +1,25 @@
+.root {
+    font-size: 14rem;
+
+    h1 {
+        margin-block: 16rem;
+    }
+
+    h2 {
+        margin-block: 14rem;
+    }
+
+    p {
+        margin-block: 12rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    code {
+        color: rgb(199, 37, 78);
+        background-color: rgb(249, 242, 244);
+        border-radius: 4px;
+    }
+}
