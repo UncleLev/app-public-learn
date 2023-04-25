@@ -34,6 +34,7 @@ const Header = ({ className }: HeaderType) => {
                         <p className={styles.header__title}>Навчанння</p>
                     </Link>
                     <Link href="/tabs">Додаткова інформація</Link>
+                    <Link href="/test">Тестування</Link>
                 </div>
                 <div className={styles.vision}>
                     <RemoveRedEyeIcon />

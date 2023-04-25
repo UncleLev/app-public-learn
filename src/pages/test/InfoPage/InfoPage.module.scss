@@ -1,0 +1,18 @@
+.infoPage {
+    padding-top: 10rem;
+    & > h2 {
+        margin-bottom: 3.0rem;
+        text-align: center;
+    }
+
+    & > p {
+        margin-bottom: 2.0rem;
+    }
+
+    & > button {
+        margin-top: 10.0rem;
+        display: flex;
+        font-size: 1.4rem;
+        margin-inline: auto;
+    };
+}

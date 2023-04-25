@@ -42,7 +42,7 @@ body {
   font-family: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono',
     'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 }
-html { font-size: 1px; }
+html { font-size: 62.5%; }
 
 * {
   box-sizing: border-box;
@@ -69,5 +69,9 @@ a {
 
 .main-layout {
   /* height: calc(100vh - 124rem); */
-  min-height: calc(100vh - 124rem);
+  min-height: calc(100vh - 12.4rem);
+  width: 90%;
+  margin-inline: auto;
+  padding: 1rem;
+
 }
