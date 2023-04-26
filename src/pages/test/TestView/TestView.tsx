@@ -5,6 +5,7 @@ import QuestionView from "../QuestionView";
 import AnswerDialog from "../AnswerDialog";
 
 import styles from "./TestView.module.scss";
+import axios from "axios";
 
 type TestViewType = {
     className?: string;
@@ -37,10 +38,19 @@ const TestView = ({ className, questions }: TestViewType) => {
         if (score === 1) setTotalCorrect((state) => state + 1);
     };
 
+    const handlePushToDb = async () => {
+        await axios.post("/api/answer", {
+            userId: 1,
+            knowledgeLevel: activeScore,
+            elementOfLearningId: question.elementOfLearningId,
+        });
+    };
+
     const handleClose = () => {
         setDialog(false);
         setActiveQuestion((state) => state + 1);
         setTotalScore((state) => state + activeScore);
+        handlePushToDb();
     };
 
     return (

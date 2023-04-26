@@ -25,20 +25,48 @@ enum question_type {
 }
 
 model Question {
-  id        Int      @id @default(autoincrement())
-  type      question_type
-  text      String
-  answers   Answer[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id                  Int                @id @default(autoincrement())
+  type                question_type
+  text                String
+  answers             Answer[]
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  elementOfLearningId Int?
+  ElementOfLearning   ElementOfLearning? @relation(fields: [elementOfLearningId], references: [id])
 }
 
 model Answer {
   id         Int       @id @default(autoincrement())
   isCorrect  Boolean   @default(false)
-  text String
+  text       String
   Question   Question? @relation(fields: [questionId], references: [id])
   questionId Int?
   createdAt  DateTime  @default(now())
   updatedAt  DateTime  @updatedAt
+}
+
+model User {
+  id                    Int                  @id @default(autoincrement())
+  login                 String
+  password              String
+  firstName             String
+  lastName              String
+  desiredKnowledgeLevel Float                @default(0)
+  KnowledgeOfElement    KnowledgeOfElement[]
+}
+
+model ElementOfLearning {
+  id                 Int                  @id @default(autoincrement())
+  name               String
+  questions          Question[]
+  KnowledgeOfElement KnowledgeOfElement[]
+}
+
+model KnowledgeOfElement {
+  id                  Int                @id @default(autoincrement())
+  knowledgeLevel      Float              @default(0)
+  userId              Int?
+  User                User?              @relation(fields: [userId], references: [id])
+  ElementOfLearning   ElementOfLearning? @relation(fields: [elementOfLearningId], references: [id])
+  elementOfLearningId Int?
 }
